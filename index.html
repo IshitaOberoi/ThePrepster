@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meal Planner & Grocery List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <h1>The Prepster</h1>
+      <p>Plan smart. Prep quick. Live easy.</p>
+
+      <div class="searchbar">
+        <input id="searchInput" type="text" placeholder="search recipes (e.g., pasta, chicken, vegan)"/>
+        <button id="searchBtn" aria-label="Search">Search</button>
+        <button id="discoverBtn" class="ghost" aria-label="Discover">Discover ✨</button>
+      </div>
+
+      <div class="meta">
+        <span id="resultsMeta">…</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="recipes">
+      <div id="recipesGrid" class="grid"></div>
+      <div id="loading" class="loading" hidden>Loading…</div>
+      <div id="errorBox" class="error" hidden>Couldn’t load recipes. Try again.</div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="panel__header">
+          <h2>Weekly Meal Plan</h2>
+          <button id="clearPlanBtn" class="tiny danger" aria-label="Clear Meal Plan">Clear</button>
+        </div>
+        <ul id="mealPlan" class="list"></ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel__header">
+          <h2>Grocery List</h2>
+          <button id="clearGroceriesBtn" class="tiny" aria-label="Clear Groceries">Reset</button>
+        </div>
+        <ul id="groceries" class="list"></ul>
+      </div>
+
+      <footer class="footnote">Powered by Spoonacular</footer>
+    </aside>
+  </main>
+
+  <!-- Recipe Preview Modal -->
+  <div id="previewModal" class="modal" hidden>
+    <div class="modal-content">
+      <span id="closePreview" class="close">&times;</span>
+      <h3 id="previewTitle"></h3>
+      <img id="previewImage" alt="Recipe preview"/>
+      <div id="previewIngredients"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ by Ishita S. Oberoi | Meal Planner Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
